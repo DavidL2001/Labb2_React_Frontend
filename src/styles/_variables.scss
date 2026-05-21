@@ -1,0 +1,29 @@
+$font-primary: "Segoe UI" sans-serif;
+
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 48px;
+
+$border-radius: 8px;
+$transition: all 0.3s ease;
+
+$theme-colors: (
+    "primary": #e50914,
+    "dark": #141414,
+    "surface": #1f1f1f,
+    "surface-light": #2a2a2a,
+    "text": #ffffff,
+    "text-muted": #aaaaaa,
+    "success": #46d369,
+);
+
+@each $name, $color in $theme-colors {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+}

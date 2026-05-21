@@ -1,0 +1,60 @@
+@use "variables" as *;
+
+@mixin flex-center {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == "mobile" {
+    @media (max-width: 600px) {
+      @content;
+    }
+
+  } @else if $breakpoint == "tablet" {
+    @media (max-width: 900px) {
+      @content;
+    }
+
+
+  } @else if $breakpoint == "desktop" {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+};
+
+@mixin card-hover {
+    transition: $transition;
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+%btn-base{
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: $spacing-sm $spacing-md;
+    transition: $transition;
+}
+
+%card-base {
+    background-color: map-get($theme-colors, "surface");
+    border-radius: $border-radius;
+   overflow: hidden;
+}

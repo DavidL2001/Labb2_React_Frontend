@@ -1,0 +1,88 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.profile {
+  max-width: 600px;
+  margin: 0 auto;
+
+
+&__card {
+    @extend %card-base;
+    @include flex-center;
+    flex-direction: column;
+    gap: $spacing-lg;
+    padding: $spacing-xl;
+    text-align: center;
+  }
+
+
+
+  &__avatar {
+    width: 180px;
+
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid map-get($theme-colors, "primary");
+  }
+
+  &__image {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__placeholder {
+    @include flex-center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: map-get($theme-colors, "surface-light");
+    gap: $spacing-sm;
+
+    span {
+      font-size: 3rem;
+
+    }
+
+    p {
+      color: map-get($theme-colors, "text-muted");
+      font-size: 1rem;
+    }
+  }
+
+
+
+  &__actions {
+    @include flex-center;
+    gap: $spacing-md;
+    flex-wrap: wrap;
+  }
+
+  &__success {
+
+    color: map-get($theme-colors, "success");
+    font-size: 1rem;
+  }
+
+  &__error {
+    color: map-get($theme-colors, "primary");
+    font-size: 1rem;
+  }
+
+
+
+  &__name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__bio {
+
+    color: map-get($theme-colors, "text-muted");
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,115 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.movie-detail {
+  &__back {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__hero {
+
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: $spacing-xl;
+    align-items: start;
+
+    @include responsive(tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+
+  &__poster {
+    width: 100%;
+    border-radius: $border-radius;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+
+
+    @include responsive(tablet) {
+      max-width: 280px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  &__info {
+    display: flex;
+
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+
+@include responsive(mobile) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+  }
+
+  &__badge {
+    background-color: map-get($theme-colors, "surface-light");
+    border-radius: 50px;
+    color: map-get($theme-colors, "text-muted");
+    font-size: 0.85rem;
+    padding: $spacing-xs $spacing-md;
+  }
+
+
+  &__rating {
+    color: #f5c518;
+    font-size: 1.2rem;
+
+    strong {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__plot {
+    color: map-get($theme-colors, "text-muted");
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 600px;
+  }
+
+  &__crew {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    p {
+      color: map-get($theme-colors, "text-muted");
+      font-size: 0.95rem;
+    }
+  }
+
+  &__label {
+    color: map-get($theme-colors, "text");
+    font-weight: 700;
+    margin-right: $spacing-sm;
+  }
+  &__fav-btn {
+    @extend %btn-base;
+    align-self: flex-start;
+    background-color: map-get($theme-colors, "surface-light");
+    color: map-get($theme-colors, "text");
+    font-size: 1rem;
+    padding: $spacing-sm $spacing-lg;
+
+    &:hover {
+      background-color: lighten(#2a2a2a, 10%);
+    }
+
+    &--active {
+      background-color: rgba(229, 9, 20, 0.2);
+      border: 1px solid map-get($theme-colors, "primary");
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.star-rating {
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-xs;
+  padding: $spacing-xs 0;
+
+  &__stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  &__star {
+    background: none;
+    border: none;
+    color: map-get($theme-colors, "surface-light");
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0;
+
+    &--active {
+      color: #f5c518;
+    }
+
+
+  }
+
+  &__label {
+    color: map-get($theme-colors, "text-muted");
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,46 @@
+@use "../styles/variables.scss" as *;
+@use "../styles/mixins.scss" as *;
+
+.searchbar{
+    @include flex-center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-xl;
+    width: 100%;
+
+    &__input{background-color: map-get($theme-colors, "surface");
+        border: 2px solid map-get($theme-colors, "surface-light");
+        border-radius: $border-radius;
+        color: map-get($theme-colors, "text");
+        font-size: 1rem;
+        padding: $spacing-sm $spacing-md;
+        transition: $transition;
+        width: 100%;
+        max-width: 500px;
+
+        &::placeholder{
+            color: map-get($theme-colors, "text-muted");
+        }
+
+
+        &:focus{
+            border-color: map-get($theme-colors, "primary");
+            outline: none;
+        }
+    }
+
+    &__btn{ flex-shrink: 0;
+        padding: $spacing-sm $spacing-lg;
+        font-size: 1rem;
+    }
+    @include responsive("mobile"){
+        flex-direction: column;
+
+    &__input{
+            max-width: 100%;
+        }
+
+        &__btn{
+            width: 100%;
+        }
+    }
+}

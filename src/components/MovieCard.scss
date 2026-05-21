@@ -1,0 +1,64 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+
+.movie-card{
+    @extend %card-base;
+    @include card-hover;
+    position: relative;
+    cursor: pointer;
+
+    a{
+        display: block;
+        text-decoration: none;
+        color: pointer;
+    }
+
+    &__poster {
+        width: 100%;
+        aspect-ratio: 2/3;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__info {
+        padding: $spacing-sm $spacing-md $spacing-md;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-xs;
+    }
+
+    &__title {
+        font-size: 1rem;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__year {
+        color: map-get($theme-colors, "text-muted");
+        font-size: 0.8rem;
+    }
+
+    
+    &__fav-btn{
+        @extend %btn-base;
+        background: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        top: $spacing-sm;
+        right: $spacing-sm;
+        font-size: 1rem;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: 50px;
+
+
+
+        &:hover {
+            transform: scale(1.15);
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+
+    }
+}
