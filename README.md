@@ -13,7 +13,7 @@ cd server && npm install
    VITE_OMDB_API_KEY=your_api_key_here
    
 3. Start all servers
-   terminal 1 : cd labb2_react : npm run dev
-   terminal 2 : cd labb2_react : cd server : npm run dev
-   Terminal 3 : cd labb2_react : npm run json-server
+   terminal 1 : cd Labb2_React_Frontend : npm run dev
+   terminal 2 : cd Labb2_React_Frontend : cd server : npm run dev
+   Terminal 3 : cd Labb2_React_Frontend : npm run json-server
 
