@@ -6,7 +6,7 @@ You have to have Node.js and an API key from https://www.omdbapi.com
 
 Setup 
 1, Intsall dependencies
-cd labb2_react && npm install
+cd Labb2_React_Frontend && npm install
 cd server && npm install
 
 2. Create .env file in labb2_react
