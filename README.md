@@ -9,7 +9,7 @@ Setup
 cd Labb2_React_Frontend && npm install
 cd server && npm install
 
-2. Create .env file in labb2_react
+2. Create .env file in Labb2_React_Frontend
    VITE_OMDB_API_KEY=your_api_key_here
    
 3. Start all servers
